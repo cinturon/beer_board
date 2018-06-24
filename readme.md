@@ -1,6 +1,6 @@
 # Online Beer Board
 
-A web application used to display a list of beers on tap at a restaurant or brewey
+A web application used to display a list of beers on tap at a restaurant or brewery
 
 
 ## Built With
