@@ -1,0 +1,53 @@
+<div class="jumbotron">
+    <img src="{{@BASE}}/app/images/AirwaysLogo.png" alt="">
+		<h1>What's on Tap</h1>
+        <p>Tap a Beer For More Information</p>
+</div>
+<repeat group="{{ @beerList }}" value="{{ @beer }}">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 beerBox">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 beerInfo">
+
+        <div class="col-xs-1 col-sm-1 col-md-1 col-lg-1 breweryLogo">
+            <img src="{{@BASE}}/{{@beer->getBrewery()->logo}}" alt="">
+        </div>
+
+        <div class="col-xs-3 col-xs-offset-1 col-sm-3 col-sm-offset-1
+                    col-md-3 col-md-offset-1 col-lg-3 col-lg-offset-1 beerText">
+            <h1>{{@beer.beer_name}}</h1>
+        </div>
+
+        <div class="col-xs-2 col-xs-offset-1 col-sm-3 col-sm-offset-1
+                    col-md-2 col-md-offset-1 col-lg-3 col-lg-offset-1">
+
+            <h3>{{@beer->getBrewery()->brewery_name}}</h3>
+            <p>{{@beer->getBrewery()->location}}</p>
+        </div>
+
+        <div class="col-xs-1 col-xs-offset-1 col-sm-1 col-sm-offset-1
+                    col-md-1 col-md-offset-1 col-lg-1 col-lg-offset-1 beerText">
+            <h3>{{@beer.abv}}%</h3>
+        </div>
+
+        <!--<div class="hidden-xs hidden-sm hidden-md-->
+                    <!--col-lg-1 col-lg-offset-1 prices">-->
+            <!--<p>4oz = $2</p>-->
+            <!--<p>8oz = $3</p>-->
+            <!--<p>16oz = $5</p>-->
+            <!--<p>1/2 Growler = $6</p>-->
+            <!--<p>Growler = $12</p>-->
+        <!--</div>-->
+    </div>
+    <div class="col-xs-10 col-xs-offset-1 col-sm-10 col-sm-offset-1
+                col-md-10 col-md-offset-1 col-lg-10 col-lg-offset-1 description">
+        <h2>{{@beer.description}}</h2>
+    </div>
+    </div>
+</repeat>
+
+<script>
+    $(document).ready(function () {
+        $('.beerInfo').click(function () {
+            $(this).next('.description').slideToggle()
+        });
+    });
+</script>

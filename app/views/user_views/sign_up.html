@@ -1,0 +1,26 @@
+<script src="{{@BASE}}/app/views/js/validate_user.js"></script>
+<div style="padding: 3rem 1rem">
+    <form class="well center-block" style="max-width: 35rem" id="user_form" action="{{@BASE}}/signUp" method="POST" role="form">
+        <legend class="text-center">Create New User</legend>
+
+        <div id="name-error" style="background-color: #550000">
+            <h1>{{@duplicate_user}}</h1>
+        </div>
+        <div class="form-group input-group">
+            <input class="form-control" id="username" name="username" type="text"/>
+            <span class="input-group-addon">Username</span>
+
+        </div>
+        <div id="password-error" style="background-color: #550000">
+            <h1></h1>
+        </div>
+        <div class="form-group input-group">
+            <input class="form-control" id="password" name="password" type="password"/>
+            <span class="input-group-addon">Password</span>
+        </div>
+
+        <div>
+            <button class="btn btn-block btn-primary" onclick="validateUser()">Create User</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,46 @@
+<script src="{{@BASE}}/app/views/js/validate_beer.js"></script>
+<div style="padding: 3rem 1rem">
+
+    <!--<form class="well center-block" style="max-width: 35rem" action="{{@BASE}}{{@formAction}}" method="POST" role="form">-->
+    <form class="well center-block" style="max-width: 35rem" action="{{@BASE}}{{@formAction}}" method="POST" role="form" id="beer_form">
+        <legend class="text-center">Add a Beer</legend>
+
+        <div id="name-error" style="background-color: #550000">
+            <h1></h1>
+        </div>
+        <div class="form-group input-group">
+            <input class="form-control" name="beer_name" id="beer_name" type="text" value="{{@beer.beer_name}}">
+            <span class="input-group-addon">Name</span>
+        </div>
+
+        <div class="form-group input-group" style="color: #000000">
+            <span class="input-group-addon">Brewery</span>
+            <select name="brewery" id="brewery" style="color: #0004">
+                <repeat group="{{ @breweries }}" value="{{ @brewery }}">
+                    <option value="{{@brewery.id}}">{{@brewery.brewery_name}}</option>
+                </repeat>
+            </select>
+
+        </div>
+
+        <div id="abv-error" style="background-color: #550000">
+            <h1></h1>
+        </div>
+        <div class="form-group input-group">
+            <input class="form-control" name="abv" id="abv" type="number" step="any" value="{{@beer.abv}}">
+            <span class="input-group-addon">ABV</span>
+        </div>
+
+        <div class="input-group-addon textarea-addon"> Description
+            <div class="form-group input-group">
+                <textarea class="form-control" cols="100" rows="20" name="description" id="description" >{{@beer.description}}</textarea>
+            </div>
+        </div>
+
+        <div>
+            <button class="btn btn-block btn-primary" onclick="validateBeer()">Add Beer</button>
+        </div>
+    </form>
+</div>
+
+

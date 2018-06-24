@@ -1,0 +1,78 @@
+h1{
+    color: #fff757;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+    margin: 0px;
+}
+
+h3{
+    margin: 0px;
+}
+
+h4{
+    color: #ffffff;
+    font-family: 'Helvetica', 'Arial', sans-serif;
+}
+body{
+    background-color: #000;
+    color: #ffffff;
+}
+
+th{
+    background-color: #555;
+}
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
+
+#oneBeer{
+    color: #000000;
+}
+
+ul > li{
+    list-style: none;
+}
+
+.breweryLogo > img{
+    float: left;
+    padding: 20px;
+    min-width: 150px;
+    max-width: 150px;
+    min-height: 150px;
+    max-height: 150px;
+}
+
+
+.beerBox{
+    border: solid 1px #ffffff;
+}
+
+.beerText > h1,h3{
+    padding-top: 55px;
+}
+
+.prices > p{
+    line-height: 1;
+    font-weight: bolder;
+}
+
+.prices{
+    padding-top: 20px;
+    padding-right: 20px;
+}
+
+.description{
+    display: none;
+}
+
+.jumbotron{
+    background-color: #fff757;
+    color: #000000;
+    margin-bottom: 0px;
+}
+
+.jumbotron > img{
+    float: left;
+    padding-right: 40px;
+    padding-left: 50px;
+}

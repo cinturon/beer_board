@@ -1,0 +1,85 @@
+<div class="jumbotron" style="margin-bottom: 75px">
+    <!--<img src="{{@BASE}}/app/images/AirwaysLogo.png" alt="">-->
+    <h1>Manage Beers</h1>
+
+</div>
+
+<div class="col-xs-3 col-xs-offset-5  col-sm-3 col-sm-offset-5
+            col-md-3 col-md-offset-5  col-lg-3 col-lg-offset-5 " style="margin-top: 50px">
+    <form style="max-width: 35rem" action="{{@BASE}}/admin" method="POST" role="form">
+
+        <div class="input-group">
+            <input type="text" class="form-control" name="search" id="search" placeholder="Search by name">
+            <span class="input-group-btn">
+                <button class="btn btn-secondary" type="submit">Search</button>
+            </span>
+        </div>
+    </form>
+
+</div>
+<div class="container-fluid">
+
+<div class="col-xs-4  col-sm-4
+            col-md-4  col-lg-4">
+
+    <h1>Current List</h1>
+    <div class="table-responsive center">
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Brewery</th>
+            </tr>
+            </thead>
+            <tbody>
+            <repeat group="{{ @currentList }}" value="{{ @beer }}">
+                <tr>
+                    <td><p>{{@beer.beer_name}}</p></td>
+                    <td><p>{{@beer->getBrewery()->brewery_name}}</p></td>
+                </tr>
+            </repeat>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="col-xs-5  col-sm-5
+            col-md-5  col-lg-5" style="margin-top: 40px">
+
+    <div class="table-responsive center">
+	<table class="table">
+		<thead>
+			<tr>
+                <th>Tap/UnTap</th>
+                <th>Name</th>
+                <th>Brewery</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+		</thead>
+		<tbody>
+        <repeat group="{{ @beerList }}" value="{{ @beer }}">
+			<tr>
+            <tr>
+                <check if="{{ @beer.onTap  == 1}}">
+                    <true>
+                        <td><a href="{{@BASE}}/flipTap/{{@beer.id}}" class="btn btn-default" role="button" style="margin-top: 55px">Untap</a></td>
+                    </true>
+                    <false>
+                        <td><a href="{{@BASE}}/flipTap/{{@beer.id}}" class="btn btn-primary" role="button" style="margin-top: 55px">Tap</a></td>
+                    </false>
+                </check>
+
+                <td><h3>{{@beer.beer_name}}</h3></td>
+                <td><h3>{{@beer->getBrewery()->brewery_name}}</h3></td>
+                <td><a href="{{@BASE}}/edit/{{@beer.id}}" class="btn btn-warning" role="button" style="margin-top: 55px">Edit</a></td>
+                <td><a href="{{@BASE}}/delete/{{@beer.id}}" class="btn btn-danger" role="button" style="margin-top: 55px">Delete</a></td>
+			</tr>
+        </repeat>
+        </tbody>
+	</table>
+</div>
+</div>
+
+</div>
